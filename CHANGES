@@ -16,7 +16,7 @@ New features:
   
 Other changes:
 
-- Minor changes in documentation
+- Minor changes in documentation; fixed broken url's
 - Moved repos from Google Code (hg) to Github (git)
 
 

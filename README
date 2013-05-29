@@ -9,16 +9,17 @@ Version 0.6
 
 Copyright (C) 2008-2013 by Erwin Marsi and Tilburg University
 
-http://daeso.uvt.nl/pycornetto
-e.c.marsi@uvt.nl
+https://github.com/emsrc/pycornetto
+e.marsi@gmail.com
 
 
 --------------------------------------------------------------------------------
 	DESCRIPTION
 --------------------------------------------------------------------------------
 
-Pycornetto is a Python interface to the Cornetto database, a lexical-semantic
-database for Dutch (http://www.let.vu.nl/onderzoek/projectsites/cornetto). 
+Pycornetto is a Python interface to the Cornetto database, 
+a lexical-semantic database for Dutch 
+(http://www.let.vu.nl/en/research/projects/index.asp#Cornetto). 
 It allows you to ask questions about lexical-semantic relations between
 words, such as "Is word X a synonym of word Y?", "What are the
 hyponyms of the verb X?", etc.
@@ -40,7 +41,7 @@ Haskell, .NET, ...).
 IMPORTANT: This interface is useless without the Cornetto database which is
 NOT included in this distribution. It is available from the TST Centrale (the
 Dutch HLT Agency) at the following website:
-http://www.inl.nl/index.php?option=com_content&task=view&id=448&Itemid=552
+http://tst-centrale.org/nl/producten/lexica/cornetto/7-56
 
 Pycornetto offers a command line and client/server interface targeted at
 "power users" who intend to use Cornetto for natural language processing. If
@@ -105,7 +106,7 @@ specified. In the Pycornetto server, this limit can be enforced through the
 --------------------------------------------------------------------------------
 
 For questions, bug reports or feature requests, please contact 
-Erwin Marsi at e.c.marsi@uvt.nl.
+Erwin Marsi at e.marsi@gmail.com.
 
 
 --------------------------------------------------------------------------------
@@ -123,8 +124,8 @@ Pycornetto's existence would be much harder without:
 
 - the Python programming language (http://www.python.org/)
 - the NetworkX Python package for creating and manipulating graphs and networks 
-  (https://networkx.lanl.gov/)
-- Steven Bethard's argparse module (http://argparse.python-hosting.com/) 
+  (http://networkx.github.io)
+- Steven Bethard's argparse module (http://code.google.com/p/argparse/) 
 - Wingware's Python IDE (http://www.wingware.com/)
 
 Thanks for (help with) fixing bugs:

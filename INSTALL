@@ -9,8 +9,8 @@ Version 0.6
 
 Copyright (C) 2008-2013 by Erwin Marsi and Tilburg University
 
-http://daeso.uvt.nl/pycornetto
-e.c.marsi@uvt.nl
+https://github.com/emsrc/pycornetto
+e.marsi@gmail.com
 
 
 --------------------------------------------------------------------------------
@@ -27,7 +27,7 @@ Software requirements:
    * Python >=2.5 available at http://www.python.org
 
    * The NetworkX package for creating and manipulating graphs and networks 
-      available from https://networkx.lanl.gov/
+      available from https://pypi.python.org/pypi/networkx/
 
 Pycornetto has been tested on GNU/Linux Ubuntu and Mac OS X (Leopard) with
 Python 2.5.2 and NetworkX 0.3.7, but should work on any platform supported by
@@ -42,8 +42,9 @@ e.g. your Linux distribution).
    INSTALL PYCORNETTO
 --------------------------------------------------------------------------------
 
-1. Download the source archive in your preferred format
-   (e.g. Pycornetto-0.6.tar.gz) from http://daeso.uvt.nl/pycornetto
+1. Download the source archive in your preferred format 
+   (e.g. Pycornetto-0.6.tar.gz) from 
+   https://github.com/emsrc/pycornetto/wiki/Python-Packages
 
 2. Unpack (e.g. tar xvzf Pycornetto-0.6.tar.gz) in a suitable location
    (e.g. /usr/local/src)
@@ -104,7 +105,8 @@ subelements is fine), as Pycornetto crucially depends on them:
 If you want to use the word similarity functions, you need to add word counts
 to the lexical units.
 
-1. Download the word count list from http://daeso.uvt.nl/pycornetto
+1. Unfortuntely the word count list is not publicly available, so send me an 
+   email for the download link.
 
 2. Unpack (e.g. tar xvzf word-counts-*.tar.gz) in a suitable location
    (e.g., in the same directory as the Cornetto xml files). This will create a
@@ -176,7 +178,7 @@ instead of the original cdb_lu_xxx.xml.
 
 
 Troubleshooting: please describe the problem as clearly as possible and
-contact me (Erwin Marsi) at e.c.marsi@uvt.nl.
+contact me (Erwin Marsi) at e.marsi@gmail.com.
 
 
 --------------------------------------------------------------------------------

@@ -2,9 +2,9 @@ Metadata-Version: 1.1
 Name: pycornetto
 Version: 0.6.1
 Summary: python interface to Cornetto database
-Home-page: http://daeso.uvt.nl/pycornetto
+Home-page: https://github.com/emsrc/pycornetto
 Author: Erwin Marsi
-Author-email: e.c.marsi@uvt.nl
+Author-email: e.marsi@gmail.com
 License: GNU Public License
 Description: 
         python interface to Cornetto
