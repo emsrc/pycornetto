@@ -1,0 +1,5 @@
+_*
+*.pyc
+dist
+MANIFEST
+!__init__.py

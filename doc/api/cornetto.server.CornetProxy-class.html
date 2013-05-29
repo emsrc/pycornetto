@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cornetto.server.CornetProxy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="cornetto-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Pycorneto</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="cornetto-module.html">Package&nbsp;cornetto</a> ::
+        <a href="cornetto.server-module.html">Module&nbsp;server</a> ::
+        Class&nbsp;CornetProxy
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="cornetto.server.CornetProxy-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class CornetProxy</h1><p class="nomargin-top"><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">CornetProxy</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="cornetto.simserver.SimCornetProxy-class.html">simserver.SimCornetProxy</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>A proxy to the Cornet class which serves to:</p>
+  <ol start="1">
+    <li>
+      hide Cornet methods which should not be exposed through XML-RPC
+    </li>
+    <li>
+      restrict parameter values which should not be exposed through XML-RPC
+      (e.g. &quot;raw&quot; format)
+    </li>
+    <li>
+      translate None return values, which XML-RPC cannot handle, to False
+    </li>
+    <li>
+      provide doc strings which are suitable to XML-RPC's system.methodHelp
+      command
+    </li>
+  </ol>
+  <p>Note that this proxy class should be not used by other Python 
+  programs, which should call methods from the Cornet class directly.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cdb_lu</span>,
+        <span class="summary-sig-arg">cdb_sy</span>,
+        <span class="summary-sig-arg">verbose</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">max_depth</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">cornet_class</span>=<span class="summary-sig-default">&lt;class 'cornetto.cornet.Cornet'&gt;</span>)</span><br />
+      x.__init__(...) initializes x; see help(type(x)) for signature</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#help" class="summary-sig-name">help</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method</span>=<span class="summary-sig-default">None</span>)</span><br />
+      help([METHOD]) --&gt; HELP</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.help">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#help_specs" class="summary-sig-name">help_specs</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      help_specs() --&gt; HELP</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.help_specs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#help_formats" class="summary-sig-name">help_formats</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      help_formats() --&gt; HELP</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.help_formats">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#ask" class="summary-sig-name">ask</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">query</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      ask(QUERY[, FORMAT]) --&gt; ANSWER</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.ask">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#get_lex_units" class="summary-sig-name">get_lex_units</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">spec</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      get_lex_units(SPEC[, FORMAT]) --&gt; LUS</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_lex_units">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#get_related_lex_units" class="summary-sig-name">get_related_lex_units</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec</span>,
+        <span class="summary-sig-arg">rel_spec</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      get_related_lex_units(LU_SPEC, REL_SPEC[, FORMAT]) --&gt; RESULT</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_related_lex_units">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#test_lex_units_relation" class="summary-sig-name">test_lex_units_relation</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">from_lu_spec</span>,
+        <span class="summary-sig-arg">rel_spec</span>,
+        <span class="summary-sig-arg">to_lu_spec</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      test_lex_units_relation(FROM_LU_SPEC, REL_SPEC, TO_LU_SPEC[, FORMAT]) --&gt; PATH</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.test_lex_units_relation">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#get_synsets" class="summary-sig-name">get_synsets</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">spec</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      get_synsets(SPEC[, FORMAT]) --&gt; SETS</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_synsets">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#get_related_synsets" class="summary-sig-name">get_related_synsets</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec</span>,
+        <span class="summary-sig-arg">rel_name</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      get_related_synsets(LU_SPEC[, REL_NAME[, FORMAT]]) --&gt; RESULT</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_related_synsets">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#get_lex_unit_by_id" class="summary-sig-name">get_lex_unit_by_id</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">c_lu_id</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      get_lex_unit_by_id(C_LU_ID[, FORMAT]) --&gt; LU</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_lex_unit_by_id">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#get_synset_by_id" class="summary-sig-name">get_synset_by_id</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">c_sy_id</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      get_synset_by_id(C_SY_ID[,FORMAT]) --&gt; SET</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_synset_by_id">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#all_common_subsumers" class="summary-sig-name">all_common_subsumers</a>(<span class="summary-sig-arg">LU_SPEC_1</span>,
+        <span class="summary-sig-arg">LU_SPEC_2</span>,
+        <span class="summary-sig-arg">rel_name</span>=<span class="summary-sig-default">&quot;HAS_HYPERONYM&quot;</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">...=None</span>)</span><br />
+      --&gt; RESULT</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.all_common_subsumers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.server.CornetProxy-class.html#least_common_subsumers" class="summary-sig-name">least_common_subsumers</a>(<span class="summary-sig-arg">LU_SPEC_1</span>,
+        <span class="summary-sig-arg">LU_SPEC_2</span>,
+        <span class="summary-sig-arg">rel_name</span>=<span class="summary-sig-default">&quot;HAS_HYPERONYM&quot;</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">...=None</span>)</span><br />
+      --&gt; RESULT</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.least_common_subsumers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_safe_return"></a><span class="summary-sig-name">_safe_return</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span><br />
+      translates None return values, which XML-RPC cannot handle, to False</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy._safe_return">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_safe_format"></a><span class="summary-sig-name">_safe_format</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">format</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy._safe_format">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_describe_method"></a><span class="summary-sig-name">_describe_method</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy._describe_method">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_summarize_all_doc_strings"></a><span class="summary-sig-name">_summarize_all_doc_strings</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy._summarize_all_doc_strings">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_summarize_doc_string"></a><span class="summary-sig-name">_summarize_doc_string</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy._summarize_doc_string">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_allowed_formats"></a><span class="summary-name">_allowed_formats</span> = <code title="('spec', 'xml', None)"><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">spec</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">xml</code><code class="variable-quote">'</code><code class="variable-op">, </code>None<code class="variable-group">)</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cdb_lu</span>,
+        <span class="sig-arg">cdb_sy</span>,
+        <span class="sig-arg">verbose</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">max_depth</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">cornet_class</span>=<span class="sig-default">&lt;class 'cornetto.cornet.Cornet'&gt;</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="help"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">help</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">method</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.help">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+help([METHOD]) --&gt; HELP
+
+Return short description of all available methods, 
+or full help on a particular method.
+
+Parameters:       
+
+    METHOD string: method name
+    
+    HELP string: help text
+    
+Remarks:
+    
+    This is a fancy replacement for XML-RPC's introspection methods
+    system.listMethods, system.methodHelp, which are still available
+    (system.methodSignature is not supported).
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="help_specs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">help_specs</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.help_specs">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+help_specs() --&gt; HELP
+
+Help on writing specifications for lexical units and relations
+
+Parameters:       
+
+    HELP string: help text
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="help_formats"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">help_formats</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.help_formats">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+help_formats() --&gt; HELP
+
+Help on output formats
+
+Parameters:       
+
+    HELP string: help text
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="ask"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ask</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">query</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.ask">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+ask(QUERY[, FORMAT]) --&gt; ANSWER
+
+Pose a query about lexical units to the Cornetto database
+
+Parameters:       
+
+    QUERY string:  a specification of lexical units(s) and relations
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)     
+    
+    ANSWER array/struct/boolean: answer to query 
+                                  or False
+                                  
+Remarks:
+    
+    This function is the most general and convenient way to interact
+    with Cornetto. It supports three different types of queries:
+    
+        1. Getting lexical units
+        
+           If the query consists of only a lexical unit specification
+           the answer lists all lexical units which satisfy this
+           specification. See also function &quot;get_lex_units&quot;
+        
+        2. Getting related lexical units
+        
+           If the query consists of a lexical unit specification plus
+           a relation specification, the answer consists of all
+           lexical units related by the specified relation(s). See
+           also function &quot;get_related_lex_units&quot;
+        
+        3. Testing relations between lexical units
+        
+           If the query consists of a lexical unit specification, plus
+           a relation specification plus another lexical
+           specification, the answer is a path from the first to the
+           second lexical unit(s) along the specified relation(s). See
+           also function &quot;test_lex_units_relation&quot;                   
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_lex_units"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_lex_units</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">spec</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_lex_units">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_lex_units(SPEC[, FORMAT]) --&gt; LUS
+
+Get all lexical units which satisfy this specification
+
+Parameters:       
+
+    SPEC string: lexical unit specification
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)  
+    
+    LUS array: list of lexical units, possibly empty.
+
+Examples (output in Python format):
+    
+    $ get_lex_units(&quot;lamp&quot;)
+    ['lamp:noun:3', 'lamp:noun:4', 'lamp:noun:1', 'lamp:noun:2']
+    
+    $ get_lex_units(&quot;varen&quot;)
+    ['varen:verb:3', 'varen:noun:1', 'varen:verb:1', 'varen:verb:2']
+
+    $ get_lex_units(&quot;varen:noun&quot;)
+    ['varen:noun:1']
+
+    $ get_lex_units(&quot;varen:verb:3&quot;)
+    ['varen:verb:3']
+
+    $ inst.get_lex_units(&quot;varen:noun:3&quot;)
+    []
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_related_lex_units"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_related_lex_units</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec</span>,
+        <span class="sig-arg">rel_spec</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_related_lex_units">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_related_lex_units(LU_SPEC, REL_SPEC[, FORMAT]) --&gt; RESULT
+
+For all specified lexical units, find all lexical units related 
+by the specified relation.
+
+Parameters:       
+
+    LU_SPEC string: lexical unit(s) specification of source
+    REL_SPEC string: relation(s) specification
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)       
+    
+    RESULT struct: related lexical units 
+    
+Remarks:
+    
+    The format of the return value is a hierarchical struct. The keys
+    are lexical units and relations. The values values are (empty)
+    structs.
+    
+Examples (output in Python format):
+    
+    $ get_related_lex_units(&quot;slang&quot;, &quot;SYNONYM&quot;)
+    {'slang:noun:1': {'SYNONYM': {'serpent:noun:2': {}}},
+     'slang:noun:2': {},
+     'slang:noun:3': {'SYNONYM': {'pin:noun:2': {}, 'tang:noun:2': {}}},
+     'slang:noun:4': {'SYNONYM': {'groepstaal:noun:1': {},
+                                  'jargon:noun:1': {},
+                                  'kringtaal:noun:1': {}}},
+     'slang:noun:5': {'SYNONYM': {'muntslang:noun:1': {}}},
+     'slang:noun:6': {'SYNONYM': {'Slang:noun:1': {}}}}
+
+    $ get_related_lex_units(&quot;slang::1&quot;, &quot;1&quot;)
+    {'slang:noun:1': {'HAS_HOLO_MEMBER': {'slangegebroed:noun:1': {},
+                                          'slangengebroed:noun:2': {}},
+                      'HAS_HYPERONYM': {'reptiel:noun:1': {}},
+                      'HAS_HYPONYM': {'cobra:noun:1': {},
+                                      'gifslang:noun:1': {},
+                                      'hoedslang:noun:1': {},
+                                      'hydra:noun:2': {},
+                                      'lansslang:noun:1': {},
+                                      'lepelslang:noun:1': {},
+                                      'python:noun:2': {},
+                                      'ratelslang:noun:1': {},
+                                      'ringslang:noun:1': {},
+                                      'rolslang:noun:1': {},
+                                      'waterslang:noun:3': {},
+                                      'wurgslang:noun:1': {},
+                                      'zeeslang:noun:1': {}},
+                      'HAS_MERO_PART': {'slangekop:noun:1': {},
+                                        'slangenkop:noun:1': {}},
+                      'SYNONYM': {'serpent:noun:2': 
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="test_lex_units_relation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">test_lex_units_relation</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">from_lu_spec</span>,
+        <span class="sig-arg">rel_spec</span>,
+        <span class="sig-arg">to_lu_spec</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.test_lex_units_relation">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+test_lex_units_relation(FROM_LU_SPEC, REL_SPEC, TO_LU_SPEC[, FORMAT]) --&gt; PATH
+
+Test if certain relation(s) hold between certain lexical units
+
+Parameters:       
+
+    FROM_LU_SPEC string: lexical unit specification of the source(s)
+    REL_SPEC string: relation(s) specification
+    TO_LU_SPEC string: lexical unit specification of the target(s)
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)       
+    
+    PATH array: a path from any of the source lexical units to any of the 
+                  target lexical unit(s) along one or more of the specified
+                  relation(s), possibly empty
+                  
+Remarks:
+    
+    The result may not be the only shortest path.
+    
+Examples (output in Python format):
+    
+    $ test_lex_units_relation(&quot;lamp&quot;, &quot;HAS_HYPONYM&quot;, &quot;gloeilamp&quot;)
+    ['lamp:noun:2', 'HAS_HYPONYM', 'gloeilamp:noun:1']
+    
+    $ test_lex_units_relation(&quot;lamp&quot;, &quot;HAS_HYPONYM2&quot;, &quot;fotolamp&quot;)
+    ['lamp:noun:2', 'HAS_HYPONYM', 'gloeilamp:noun:1', 'HAS_HYPONYM', 'fotolamp:noun:1']
+    
+    $ test_lex_units_relation(&quot;lamp&quot;, &quot;HAS_HYPONYM&quot;, &quot;fotolamp&quot;)
+    []
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_synsets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_synsets</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">spec</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_synsets">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_synsets(SPEC[, FORMAT]) --&gt; SETS
+
+Get all synsets containing lexical units which satisfy a certain specification.
+
+Parameters:       
+
+    SPEC string: lexical unit specification
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)        
+    
+    SETS array: list of synsets, possibly empty
+
+Examples (output in Python format):
+
+    $ get_synsets(&quot;slang&quot;)
+    [['Slang:noun:1', 'slang:noun:6'],
+     ['slang:noun:5', 'muntslang:noun:1'],
+     ['slang:noun:1', 'serpent:noun:2'],
+     ['slang:noun:2'],
+     ['tang:noun:2', 'pin:noun:2', 'slang:noun:3'],
+     ['jargon:noun:1', 'groepstaal:noun:1', 'kringtaal:noun:1', 'slang:noun:4']]
+     
+     $ get_synsets(&quot;slang:noun:5&quot;)
+     [['slang:noun:5', 'muntslang:noun:1']]
+
+     $ get_synsets(&quot;slang:noun:7&quot;)
+     []
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_related_synsets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_related_synsets</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec</span>,
+        <span class="sig-arg">rel_name</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_related_synsets">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_related_synsets(LU_SPEC[, REL_NAME[, FORMAT]]) --&gt; RESULT
+
+For all synsets containing lexical units satisfying this specification
+find the related synsets along this relation. 
+
+Parameters:       
+
+    LU_SPEC string: lexical unit(s) specification of source
+    REL_NAME string: relation name; if no relation is given, 
+        all relations are considered.
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)   
+    
+    RESULT struct: a struct with relations as keys and arrays 
+        of synsets as value, possibly empty
+        
+Remarks:
+    
+    Note that REL_NAME is a relation name, not a relation
+    specification, and that search is thus not transitive.
+    
+Examples (output in Python format):
+      
+    $ get_related_synsets(&quot;lamp&quot;, &quot;HAS_HYPERONYM&quot;)
+    {'HAS_HYPERONYM': [['armatuur:noun:1', 'verlichtingsarmatuur:noun:1'],
+                       ['lamp:noun:2', 'licht:noun:13', 'lichtje:noun:1'],
+                       ['lichtbron:noun:1'],
+                       ['voorwerp:noun:1', 'ding:noun:1']]}
+    
+    $ get_related_synsets(&quot;slang::1&quot;)
+    {'HAS_HOLO_MEMBER': [['slangegebroed:noun:1', 'slangengebroed:noun:2']],
+     'HAS_HYPERONYM': [['reptiel:noun:1']],
+     'HAS_MERO_PART': [['slangekop:noun:1', 'slangenkop:noun:1']]}
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_lex_unit_by_id"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_lex_unit_by_id</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">c_lu_id</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_lex_unit_by_id">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_lex_unit_by_id(C_LU_ID[, FORMAT]) --&gt; LU
+
+Get lexical unit by id
+
+Parameters:       
+
+    C_LU_ID string: value of the 'c_lu_id' attribute 
+        at &lt;cdb_lu&gt; element
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)   
+    
+    LU string/boolean: lexical unit in the requested output format, 
+           or False
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_synset_by_id"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_synset_by_id</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">c_sy_id</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.get_synset_by_id">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_synset_by_id(C_SY_ID[,FORMAT]) --&gt; SET
+
+Get synset by id
+
+Parameters:       
+
+    C_SY_ID string: value of the 'c_sy_id' attribute 
+        at &lt;cdb_synset&gt; element
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)   
+    
+    SET array/boolean: set of lexical units in the requested 
+        output format, or False
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="all_common_subsumers"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">all_common_subsumers</span>(<span class="sig-arg">LU_SPEC_1</span>,
+        <span class="sig-arg">LU_SPEC_2</span>,
+        <span class="sig-arg">rel_name</span>=<span class="sig-default">&quot;HAS_HYPERONYM&quot;</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">...=None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.all_common_subsumers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+--&gt; RESULT
+           
+Find all common subsumers of two lexical units over the given relation. 
+
+Parameters:       
+
+    This method will only make sense for some relations (typically HAS_HYPERONYM) 
+    but not for others (like SYNONYM).
+    
+    LU_SPEC_1 string: first lexical unit specification
+    LU_SPEC_2 string: second lexical unit specification
+    REL_NAME string: relation name
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)
+    
+    RESULT struct: a struct with path lenghts as key and lists of 
+        common subsumers as values, possibly empty
+
+Remarks:
+
+    The common subsumers are grouped according to the lenght of the
+    path (in edges) from the first lexical unit to the subsumer to the
+    second lexical unit.
+
+Examples (output in Python format):
+    
+    $ all_common_subsumers(&quot;man&quot;, &quot;vrouw&quot;)
+    {1: ['man:noun:3'],
+     2: ['levenspartner:noun:1',
+         'wederhelft:noun:1',
+         'figuur:noun:4',
+         'partner:noun:4',
+         'persoon:noun:1',
+         'mens:noun:4'],
+     3: ['ziel:noun:3',
+         'mensenkind:noun:1',
+         'mens:noun:1',
+         'sterveling:noun:1',
+         'homo sapiens:noun:1'],
+     5: ['zoogdier:noun:1'],
+     7: ['dier:noun:1', 'gedierte:noun:2', 'beest:noun:1'],
+     9: ['organisme:noun:2'],
+     10: ['object:noun:1'],
+     11: ['creatuur:noun:1', 'wezen:noun:1', 'schepsel:noun:1'],
+     12: ['iets:noun:2']}
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="least_common_subsumers"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">least_common_subsumers</span>(<span class="sig-arg">LU_SPEC_1</span>,
+        <span class="sig-arg">LU_SPEC_2</span>,
+        <span class="sig-arg">rel_name</span>=<span class="sig-default">&quot;HAS_HYPERONYM&quot;</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">...=None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.server-pysrc.html#CornetProxy.least_common_subsumers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+--&gt; RESULT
+                       
+Finds the least common subsumers of two lexical units over the given
+relation, that is, those common subsumers of which the lenght of
+the path (in edges) from the first lexical unit to the subsumer to the
+second lexical unit is minimal.
+
+Parameters:       
+    
+    LU_SPEC_1 string: first lexical unit specification
+    LU_SPEC_2 string: second lexical unit specification
+    REL_NAME string: relation name
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)
+    
+    RESULT array:  a lists of the least common subsumers, possibly empty
+
+Remarks:
+
+    This method will only make sense for some relations (typically HAS_HYPERONYM) 
+    but not for others (like SYNONYM).
+    
+Examples (output in Python format):
+    
+    $ least_common_subsumers(&quot;auto&quot;, &quot;fiets&quot;))
+    ['vehikel:noun:1', 'voertuig:noun:1']
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="cornetto-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Pycorneto</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed May 29 10:20:12 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

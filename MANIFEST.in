@@ -1,0 +1,6 @@
+include COPYING CHANGES INSTALL README USAGE
+recursive-include doc *
+
+global-exclude *~
+global-exclude *.pyc
+global-exclude .svn

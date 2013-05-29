@@ -1,0 +1,206 @@
+================================================================================
+
+   PYCORNETTO INSTALL
+
+================================================================================
+
+Pycornetto
+Version 0.6
+
+Copyright (C) 2008-2013 by Erwin Marsi and Tilburg University
+
+http://daeso.uvt.nl/pycornetto
+e.c.marsi@uvt.nl
+
+
+--------------------------------------------------------------------------------
+   REQUIREMENTS
+--------------------------------------------------------------------------------
+
+IMPORTANT: This interface is useless without the Cornetto database which is
+NOT included in this distribution. It is available from the TST Centrale (the
+Dutch HLT Agency) at the following website:
+http://tst-centrale.org/nl/producten/lexica/cornetto/7-56
+
+Software requirements:
+
+   * Python >=2.5 available at http://www.python.org
+
+   * The NetworkX package for creating and manipulating graphs and networks 
+      available from https://networkx.lanl.gov/
+
+Pycornetto has been tested on GNU/Linux Ubuntu and Mac OS X (Leopard) with
+Python 2.5.2 and NetworkX 0.3.7, but should work on any platform supported by
+Python, which includes MS Windows.
+
+Notice that some of these software dependcies may already be available on your
+system, or may be easily installed through a package manager (depending on
+e.g. your Linux distribution).
+
+
+--------------------------------------------------------------------------------
+   INSTALL PYCORNETTO
+--------------------------------------------------------------------------------
+
+1. Download the source archive in your preferred format
+   (e.g. Pycornetto-0.6.tar.gz) from http://daeso.uvt.nl/pycornetto
+
+2. Unpack (e.g. tar xvzf Pycornetto-0.6.tar.gz) in a suitable location
+   (e.g. /usr/local/src)
+
+3. Install using the command
+
+   python setup.py install
+
+   Normally you need to have root or administrator rights to do a system-wide
+   install. For more information (alternative install locations, trouble
+   shooting, etc) see "Installing Pyton Modules" at
+   http://docs.python.org/inst/inst.html
+
+4. Optional: remove the unpacked archive
+
+
+--------------------------------------------------------------------------------
+   PREPROCESS CORNETTO XML FILES
+--------------------------------------------------------------------------------
+
+Pycornetto reads two files from the Cornetto database:  
+
+   1. cdb_lu_xxx.xml, which contains the lexical units
+   2. cdb_syn_xxx.xml, which contains the synsets
+
+where the exact filenames may differ depending on your version of
+the Cornetto database.
+
+These files are huge and keeping them in memory consumes a lot of your system's
+memory. You can reduce their size by stripping those xml elements which are
+irrelevant for your purposes. For a start, you can remove empty elements. This
+is what the script cornetto-strip does for you. Run it like this to obtain a
+stripped file:
+
+   cornetto-strip.py cdb_lu_xxx.xml >cdb_lu_stripped.xml
+   cornetto-strip.py cdb_syn_xxx.xml >cdb_syn_stripped.xml
+
+You can strip the files to a bare minimum using the "-m minimal" command line option
+of cornetto-strip.py.
+
+Alternatively, you can use your own xml tools to strip the database files.
+However, do no remove the following elements and attributes (although removing
+subelements is fine), as Pycornetto crucially depends on them:
+
+   <cdb_lu>                     c_lu_id, c_seq_nr
+   <form>                       form_cat, form_spelling
+   <cdb_synset>                 c_sy_id, d_synset_id
+   <synonyms>
+   <synonym>                    c_lu_id
+   <wn_internal_relations>
+   <relation>                   relation_name, target
+
+
+--------------------------------------------------------------------------------
+   ADDING WORD COUNTS TO CORNETTO XML FILES
+--------------------------------------------------------------------------------
+
+If you want to use the word similarity functions, you need to add word counts
+to the lexical units.
+
+1. Download the word count list from http://daeso.uvt.nl/pycornetto
+
+2. Unpack (e.g. tar xvzf word-counts-*.tar.gz) in a suitable location
+   (e.g., in the same directory as the Cornetto xml files). This will create a
+   directory wc-xxx with a file count-lemma-tag-xxx.tab, where the exact names 
+   differ depending on the version of the word count list.
+
+3. Add the word counts from the word count list:
+
+   cornetto-add-counts.py cdb_lu_xxx.xml wc-xxx/count-lemma-tag-xxx.tab > cdb_lu_xxx_counts.xml
+
+   This will add the attribute "count" to the <form> element of the lexical units.
+
+4. Compute the subsumed counts for each of the lexical units:
+
+   cornetto-add-sub-counts.py cdb_lu_xxx_counts.xml cdb_syn_xxx.xml >cdb_lu_xxx_subcounts.xml
+
+   This will add the attribute "subcount" to the <form> element of the lexical units.   
+
+You can use stripped or minimal versions of cdb_lu for this.
+
+After this, you can use the SimCornet class, or start cornetto-server.py with
+the "-s" command line option, to get access to the additional word similarity
+functionality, as long as you remember to provide both with cdb_lu_xxx_subcounts.xml
+instead of the original cdb_lu_xxx.xml.
+
+
+--------------------------------------------------------------------------------
+   TESTING
+--------------------------------------------------------------------------------
+
+1. Go to the directory containing the Cornetto database files
+
+2. Start Python
+
+3. Import the cornetto package
+
+   >>> from cornetto.cornet import Cornet
+
+4. Create a Cornet instance
+
+   >>> c = Cornet()
+
+5. Parse the database files:
+
+   >>> c.open("cdb_lu_stripped.xml", "cdb_syn_stripped.xml")
+   
+   Alternatively, you can use the file with word counts as the first argument
+   (e.g. "cdb_lu_xxx_subcounts.xml").
+
+6. Wait a long time...
+
+7. Try some queries:
+
+   >>> c.ask("taal")
+   ['taal:noun:3', 'taal:noun:1', 'taal:noun:2']
+
+   >>> c.ask("taal synonym")
+   {'SYNONYM': ['taaluiting:noun:1']}
+
+   >>> c.ask("taal has_hyperonym")
+   {'HAS_HYPERONYM': ['medium:noun:1', 'communicatiemiddel:noun:1']}
+
+   >>> c.ask("taal + spraak")
+   ['taal:noun:2', 'ROLE_INSTRUMENT', 'spraak:noun:3']
+
+8. Read some online help:
+
+   >>> help(c)
+
+
+Troubleshooting: please describe the problem as clearly as possible and
+contact me (Erwin Marsi) at e.c.marsi@uvt.nl.
+
+
+--------------------------------------------------------------------------------
+   UNINSTALL
+--------------------------------------------------------------------------------
+
+All files are normally installed in subdirectories of the root of your Python
+installation (unless you choose to install in a non-standard location using
+e.g. the --prefix option from the setup.py script). You can find this
+common path "prefix" by running:
+
+   python -c "import sys; print sys.prefix"
+
+We will refer to this path as $PREFIX. Next, do the following:
+
+   1. Delete the source code from Python's site-packages directory by removing
+      the directory $PREFIX/lib/python2.5/site-packages/cornetto
+
+   2. Remove the scripts cornetto-*.py from Python's bin or scripts
+      directory $PREFIX/bin  
+
+   3. Delete the documentation and other the shared files by removing the 
+      directory $PREFIX/share/pycornetto-2.2 
+
+
+
+

@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cornetto.simserver.SimCornetProxy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="cornetto-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Pycorneto</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="cornetto-module.html">Package&nbsp;cornetto</a> ::
+        <a href="cornetto.simserver-module.html">Module&nbsp;simserver</a> ::
+        Class&nbsp;SimCornetProxy
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="cornetto.simserver.SimCornetProxy-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SimCornetProxy</h1><p class="nomargin-top"><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+        object --+    
+                 |    
+<a href="cornetto.server.CornetProxy-class.html">server.CornetProxy</a> --+
+                     |
+                    <strong class="uidshort">SimCornetProxy</strong>
+</pre>
+
+<hr />
+<p>A proxy to the SimCornet class which exposes the similary functions 
+  through XML-RPC. See CornetProxy</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.simserver.SimCornetProxy-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cdb_lu</span>,
+        <span class="summary-sig-arg">cdb_sy</span>,
+        <span class="summary-sig-arg">verbose</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">max_depth</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">cornet_class</span>=<span class="summary-sig-default">&lt;class 'cornetto.simcornet.SimCornet'&gt;</span>)</span><br />
+      x.__init__(...) initializes x; see help(type(x)) for signature</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.simserver.SimCornetProxy-class.html#get_count" class="summary-sig-name">get_count</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec</span>,
+        <span class="summary-sig-arg">subcount</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      get_count(LU_SPEC[, SUBCOUNT[, FORMAT]]) --&gt; COUNTS</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.get_count">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.simserver.SimCornetProxy-class.html#get_total_counts" class="summary-sig-name">get_total_counts</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      get_total_counts() --&gt; COUNTS</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.get_total_counts">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.simserver.SimCornetProxy-class.html#get_probability" class="summary-sig-name">get_probability</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec</span>,
+        <span class="summary-sig-arg">subcount</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">smooth</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">cat_totals</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      get_probability(LU_SPEC[, SUBCOUNT[, SMOOTH[, CAT_TOTALS[, FORMAT]]]]  
+--&gt; PROB</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.get_probability">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.simserver.SimCornetProxy-class.html#get_info_content" class="summary-sig-name">get_info_content</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec</span>,
+        <span class="summary-sig-arg">subcount</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">smooth</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">cat_totals</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      get_info_content(LU_SPEC[, SUBCOUNT[, SMOOTH[, CAT_TOTALS[, FORMAT]]]]
+--&gt; IC</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.get_info_content">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.simserver.SimCornetProxy-class.html#resnik_sim" class="summary-sig-name">resnik_sim</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec1</span>,
+        <span class="summary-sig-arg">lu_spec2</span>,
+        <span class="summary-sig-arg">smooth</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">cat_totals</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      resnik_sim(LU_SPEC1, LU_SPEC2[, SMOOTH[, CAT_TOTALS[, FORMAT]]]
+ --&gt; SIM</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.resnik_sim">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.simserver.SimCornetProxy-class.html#jiang_conrath_dist" class="summary-sig-name">jiang_conrath_dist</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec1</span>,
+        <span class="summary-sig-arg">lu_spec2</span>,
+        <span class="summary-sig-arg">smooth</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">cat_totals</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      jiang_conrath_dist(LU_SPEC1, LU_SPEC2[, SMOOTH[, CAT_TOTALS[, FORMAT]]]
+ --&gt; DIST</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.jiang_conrath_dist">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.simserver.SimCornetProxy-class.html#jiang_conrath_sim" class="summary-sig-name">jiang_conrath_sim</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec1</span>,
+        <span class="summary-sig-arg">lu_spec2</span>,
+        <span class="summary-sig-arg">smooth</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">cat_totals</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      jiang_conrath_sim(LU_SPEC1, LU_SPEC2[, SMOOTH[, CAT_TOTALS[, FORMAT]]]
+ --&gt; SIM</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.jiang_conrath_sim">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.simserver.SimCornetProxy-class.html#lin_sim" class="summary-sig-name">lin_sim</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec1</span>,
+        <span class="summary-sig-arg">lu_spec2</span>,
+        <span class="summary-sig-arg">smooth</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">cat_totals</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      lin_sim(LU_SPEC1, LU_SPEC2[, SMOOTH[, CAT_TOTALS[, FORMAT]]]
+ --&gt; SIM</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.lin_sim">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="cornetto.server.CornetProxy-class.html">server.CornetProxy</a></code></b>:
+      <code><a href="cornetto.server.CornetProxy-class.html#all_common_subsumers">all_common_subsumers</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#ask">ask</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#get_lex_unit_by_id">get_lex_unit_by_id</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#get_lex_units">get_lex_units</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#get_related_lex_units">get_related_lex_units</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#get_related_synsets">get_related_synsets</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#get_synset_by_id">get_synset_by_id</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#get_synsets">get_synsets</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#help">help</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#help_formats">help_formats</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#help_specs">help_specs</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#least_common_subsumers">least_common_subsumers</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#test_lex_units_relation">test_lex_units_relation</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="cornetto.server.CornetProxy-class.html">server.CornetProxy</a></code></b> (private):
+      <code><a href="cornetto.server.CornetProxy-class.html#_describe_method" onclick="show_private();">_describe_method</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#_safe_format" onclick="show_private();">_safe_format</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#_safe_return" onclick="show_private();">_safe_return</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#_summarize_all_doc_strings" onclick="show_private();">_summarize_all_doc_strings</a></code>,
+      <code><a href="cornetto.server.CornetProxy-class.html#_summarize_doc_string" onclick="show_private();">_summarize_doc_string</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="cornetto.server.CornetProxy-class.html">server.CornetProxy</a></code></b> (private):
+      <code><a href="cornetto.server.CornetProxy-class.html#_allowed_formats" onclick="show_private();">_allowed_formats</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cdb_lu</span>,
+        <span class="sig-arg">cdb_sy</span>,
+        <span class="sig-arg">verbose</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">max_depth</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">cornet_class</span>=<span class="sig-default">&lt;class 'cornetto.simcornet.SimCornet'&gt;</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_count"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_count</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec</span>,
+        <span class="sig-arg">subcount</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.get_count">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_count(LU_SPEC[, SUBCOUNT[, FORMAT]]) --&gt; COUNTS
+
+Get (sub)counts for lexical units satisfying this specification
+
+Parameters:       
+
+    LU_SPEC string: lexical unit specification
+    SUBCOUNT bool: return subcounts instead of plain counts
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)  
+    
+    COUNTS struct: a mapping of lexical units to counts (possibly empty)
+
+Examples (output in Python format):
+
+    $ get_counts(&quot;varen&quot;)
+    {'varen:noun:1': 434,
+     'varen:verb:1': 15803,
+     'varen:verb:2': 15803,
+     'varen:verb:3': 15803}
+    
+    $ get_counts(&quot;varen&quot;, True)
+    {'varen:noun:1': 434,
+     'varen:verb:1': 18977,
+     'varen:verb:2': 62086,
+     'varen:verb:3': 15803}
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_total_counts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_total_counts</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.get_total_counts">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_total_counts() --&gt; COUNTS
+
+Get the total counts per category and overall
+
+Parameters:
+
+    COUNTS struct: a mapping of categories to counts
+
+Remarks:
+
+    The categories are &quot;noun&quot;, &quot;verb&quot;, &quot;adj&quot;, &quot;other&quot;;
+    &quot;all&quot; represents the overall count.
+               
+Example (output in Python format):
+
+    $ get_total_counts()
+    {'adj': 62156445,
+     'all': 518291832,
+     'noun': 187143322,
+     'other': 199269966,
+     'verb': 69722099}
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_probability"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_probability</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec</span>,
+        <span class="sig-arg">subcount</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">smooth</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">cat_totals</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.get_probability">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_probability(LU_SPEC[, SUBCOUNT[, SMOOTH[, CAT_TOTALS[, FORMAT]]]]  
+--&gt; PROB
+
+Get probability (p) for lexical units satisfying this specification,
+where the probability is defined as lu_count / total_count.
+
+Parameters:
+
+    LU_SPEC string: lexical unit specification
+    SUBCOUNT bool: use subcounts instead of plain counts
+    SMOOTH bool: smooth counts by adding one to lexical units with a zero count
+    CAT_TOTALS bool: use total count for category of lexical unit
+        instead of overall total count
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)  
+    
+    PROB struct: a mapping of lexical units to probabilities 
+        (possibly empty)
+
+Remarks:
+
+    By default, the total count this is taken to be the sum of counts over
+    all word forms in the Cornetto database. However, when comparing two
+    words of the same category (nouns, verbs, adjectives) it may be more
+    appropriate to take the sum over only the word forms of this category.
+    This method is used if the keyword &quot;cat_totals&quot; is true.
+
+Examples (output in Python format):
+
+    $ get_probabilities(&quot;varen&quot;)
+    {'varen:noun:1': 8.3736608066013281e-07,
+     'varen:verb:1': 3.0490544176663777e-05,
+     'varen:verb:2': 3.0490544176663777e-05,
+     'varen:verb:3': 3.0490544176663777e-05}
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_info_content"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_info_content</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec</span>,
+        <span class="sig-arg">subcount</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">smooth</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">cat_totals</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.get_info_content">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+get_info_content(LU_SPEC[, SUBCOUNT[, SMOOTH[, CAT_TOTALS[, FORMAT]]]]
+--&gt; IC
+
+Get information content (IC) for lexical units satisfying this
+specification.
+
+Parameters:
+
+    LU_SPEC string: lexical unit specification
+    SUBCOUNT bool: use subcounts instead of plain counts
+    SMOOTH bool: smooth counts by adding one to lexical units 
+        with a zero count
+    CAT_TOTALS bool: use total count for category of lexical unit
+        instead of overall total count
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)  
+    
+    IC struct: a mapping of lexical units to information content 
+        (possibly empty)
+        
+Remarks:
+
+    The information content defined as the negative log of the lexical
+    unit's probability, i.e. -log_2(lu_count / total_count).
+    
+    If a lexical unit has a count of zero, the probability is zero,
+    the log is undefined, and None is returned. Unless the keyword
+    &quot;smooth&quot; is true, in which case the count is smoothed by adding
+    one.
+    
+    If no lexical unit matches the specification, an empty mapping is
+    returned.
+
+Examples (output in Python format):
+
+    $ get_info_content(&quot;plant&quot;)
+    {'plant:noun:1': 14.51769181264614}
+    
+    &gt;&gt;&gt; pprint(c.get_info_content(&quot;plant&quot;, subcount=True))
+    {'plant:noun:1': 10.482770362490861}
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="resnik_sim"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">resnik_sim</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec1</span>,
+        <span class="sig-arg">lu_spec2</span>,
+        <span class="sig-arg">smooth</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">cat_totals</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.resnik_sim">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+resnik_sim(LU_SPEC1, LU_SPEC2[, SMOOTH[, CAT_TOTALS[, FORMAT]]]
+ --&gt; SIM
+ 
+Compute the semantic similarity as decribed in Philip Resnik's paper
+&quot;Using Information Content to Evaluate Semantic Similarity in a
+Taxonomy&quot; (1995). 
+
+Parameters:
+
+    LU_SPEC_1 string: first lexical unit specification
+    LU_SPEC_2 string: second lexical unit specification
+    SMOOTH bool: smooth counts by adding one to lexical units 
+        with a zero count
+    CAT_TOTALS bool: use total count for category of lexical unit
+        instead of overall total count
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)
+    
+    SIM float or False: similarity score greater than or equal 
+        to zero, or False
+        
+Remarks:
+
+    Resnik's similarity is defined for a pair of concepts c1 and c2
+    as:
+    
+        argmax [IC(c1) + IC(c2) - 2 * IC(lcs)] for all lcs in LCS(c1, c2)
+    
+    In other words, the maximum value of the information content over
+    all least common subsumers of two concepts. An important point is
+    that the counts of an LCS, as used in computing its probabilty, is
+    the sum of its own count plus the counts of all concepts that it
+    subsumes.
+    
+    As suggested by Resnik, it can be extended to _word_ similarity by
+    taking the maximum over the scores for all concepts that are
+    senses of the word. This means that if just two words are
+    specified - without a category or sense - two sets of matching
+    lexical units are retrieved. For every combination of lexical
+    units from these two sets, the LCS is computed (if any), and the
+    one with the maximum information content is selected.
+    
+    If no LCS is found, this can mean two things: 
+    
+        1. The two words have no LCS because they truely have 
+           nothing in common. In this case we assume the LCS is zero and 
+           therefore we return zero.
+        2. The two words should have something in common, but the 
+           correct LCS is not present in the Cornetto database. 
+           However, since there is no way to know this, we consider this 
+           the same as (1), and zero is returned.
+    
+    There are two more marginal cases:
+    
+        1. No lexical units in the Cornetto database match the 
+           specifications. 
+        2. All LCS have a subcount of zero, and no smoothing was applied,
+           so its IC is undefined. 
+           
+    In both cases False is returned.
+    
+    Notice that it is difficult to compare Resnik's word similarities,
+    because they depend on the subcounts. With identical words, for
+    instance:
+    
+        resnik_sim(&quot;iets&quot;, &quot;iets&quot;) = 1.3113543459343666 whereas
+        resnik_sim(&quot;spotje&quot;, &quot;spotje&quot;) = 25.141834494846584
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="jiang_conrath_dist"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">jiang_conrath_dist</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec1</span>,
+        <span class="sig-arg">lu_spec2</span>,
+        <span class="sig-arg">smooth</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">cat_totals</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.jiang_conrath_dist">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+jiang_conrath_dist(LU_SPEC1, LU_SPEC2[, SMOOTH[, CAT_TOTALS[, FORMAT]]]
+ --&gt; DIST
+ 
+Compute the semantic distance as decribed in Jay Jiang &amp; David
+Conrath's paper &quot;Semantic Similarity Based on Corpus Statistics and
+Lexical Taxonomy&quot; (1997). 
+
+Parameters:
+
+    LU_SPEC_1 string: first lexical unit specification
+    LU_SPEC_2 string: second lexical unit specification
+    SMOOTH bool: smooth counts by adding one to lexical units 
+        with a zero count
+    CAT_TOTALS bool: use total count for category of lexical unit
+        instead of overall total count
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)
+    
+    DIST float or False: distance greater than of equal to zero,
+        or False
+
+Remarks:
+
+    The Jiang &amp; Conrath distance is defined for a pair of concepts c1
+    and c2 as:
+    
+        argmin [IC(c1) + IC(c2) - 2 * IC(lcs)] 
+        for all lcs in LCS(c1, c2)
+    
+    This is without the edge and node weighting scheme, which is not
+    implemented here. The measure is extended to a _word_ distance
+    measure by taking the minimum over the scores for all concepts
+    (lexical units) that are senses of the word (cf. doc of
+    resnik_sim).
+    
+    If no LCS is found, this can mean two things: 
+    
+        1. The two words have no LCS because they truely have nothing
+           in common. In this case we assume the LCS is zero and
+           therefore we return the minimun of IC(c1) + IC(c2).
+        2. The two words should have something in common, but the
+           correct LCS is not present in the Cornetto database. 
+           However, since there is no way to know this, we consider 
+           this the same as (1), and we return the minimun of 
+           IC(c1) + IC(c2).
+    
+    There are three more marginal cases:
+    
+        1. No lexical units in the Cornetto database match the 
+           specifications.
+        2. All matching lexical units have a subcount of zero,
+           and no smoothing was applied, so their IC is undefined. 
+        3. All LCS have a subcount of zero, and no smoothing was 
+           applied, so its IC is undefined. This implies that 
+           all subsumed lexical units must have a subcount of zero, 
+           and therefore (2) must be the case as well.  
+           
+    In all of these three cases False is returned.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="jiang_conrath_sim"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">jiang_conrath_sim</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec1</span>,
+        <span class="sig-arg">lu_spec2</span>,
+        <span class="sig-arg">smooth</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">cat_totals</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.jiang_conrath_sim">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+jiang_conrath_sim(LU_SPEC1, LU_SPEC2[, SMOOTH[, CAT_TOTALS[, FORMAT]]]
+ --&gt; SIM
+ 
+Returns Jiang &amp; Conrath similarity. See jiang_conrath_dist
+
+Parameters:
+
+    LU_SPEC_1 string: first lexical unit specification
+    LU_SPEC_2 string: second lexical unit specification
+    SMOOTH bool: smooth counts by adding one to lexical units 
+        with a zero count
+    CAT_TOTALS bool: use total count for category of lexical unit
+        instead of overall total count
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)
+    
+    SIM float or False: similarity between zero and one included,
+        or False
+
+Remarks:
+
+    The Jiang &amp; Conrath's similarity is defined as
+    
+        1 / (1 + jiang_conrath_dist) 
+    
+    If the distance is False, so is the similarity.
+    
+    The translation from distance to similarity is not uniform. That
+    is, the space between the distances 1 and 2 and between the
+    distances 2 and 3 is the same (i.e. 1), but the space between the
+    corresponding similaraties, i.e. between 0.5 and 0.33 and between
+    0.33 and 0.25, is not.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="lin_sim"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">lin_sim</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec1</span>,
+        <span class="sig-arg">lu_spec2</span>,
+        <span class="sig-arg">smooth</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">cat_totals</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.simserver-pysrc.html#SimCornetProxy.lin_sim">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+lin_sim(LU_SPEC1, LU_SPEC2[, SMOOTH[, CAT_TOTALS[, FORMAT]]]
+ --&gt; SIM
+ 
+Compute the semantic similarity as decribed in the paper Dekang Lin's 
+paper &quot;An information-theoretic definition of similarity&quot; (1998).
+
+Parameters:
+
+    LU_SPEC_1 string: first lexical unit specification
+    LU_SPEC_2 string: second lexical unit specification
+    SMOOTH bool: smooth counts by adding one to lexical units 
+        with a zero count
+    CAT_TOTALS bool: use total count for category of lexical unit
+        instead of overall total count
+    FORMAT string: output format (&quot;spec&quot; or &quot;xml&quot;)
+    
+    SIM float or False: similarity between zero and one included,
+        or False
+
+Remarks:
+
+    Lin's similarity is defined for a pair of concepts c1 and c2 as:
+    
+        argmax [2 * IC(lcs) / (IC(c1) + IC(c2))] 
+        for all lcs in LCS(c1, c2)
+    
+    This measure is extended to a _word_ distance measure by taking the
+    maximum over the scores for all concepts (lexical units) that are
+    senses of the word (cf. doc of resnik_sim).
+    
+    If no LCS is found, this can mean two things:  
+    
+        1. The two words have no LCS because they truely have nothing 
+           in common. In this case we assume the IC of the LCS is zero and
+           we return zero.
+        2. The two words should have something in common, but the correct 
+           LCS is not present in the Cornetto database. However, since 
+           there is no way to know this, we consider this the same as (1),
+           and we return zero.
+           
+    There are three more marginal cases:
+    
+        1. No lexical units in the Cornetto database match the 
+           specifications. 
+        2. All matching lexical units have a subcount of zero,
+           and no smoothing was applied, so their IC is undefined. 
+        3. All LCS have a subcount of zero, and no smoothing was applied,
+           so its IC is undefined. This implies that all subsumed
+           lexical units must have a subcount of zero, and therefore
+           (2) must be the case as well.  
+           
+    In all of these three cases False is returned.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="cornetto-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Pycorneto</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed May 29 10:20:12 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

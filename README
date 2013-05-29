@@ -1,0 +1,156 @@
+================================================================================
+
+	PYCORNETTO README
+
+================================================================================
+
+Pycornetto
+Version 0.6
+
+Copyright (C) 2008-2013 by Erwin Marsi and Tilburg University
+
+http://daeso.uvt.nl/pycornetto
+e.c.marsi@uvt.nl
+
+
+--------------------------------------------------------------------------------
+	DESCRIPTION
+--------------------------------------------------------------------------------
+
+Pycornetto is a Python interface to the Cornetto database, a lexical-semantic
+database for Dutch (http://www.let.vu.nl/onderzoek/projectsites/cornetto). 
+It allows you to ask questions about lexical-semantic relations between
+words, such as "Is word X a synonym of word Y?", "What are the
+hyponyms of the verb X?", etc.
+
+There are basically four ways to use Pycornetto:
+	
+	(1) you can use it interactively from the command line of the 
+	    Python interpreter
+	(2) you can call it from your own Python code
+	(3) you can run the database server and connect to it with 
+	    the supplied client
+	(4) you can run the database server and connect to it through XML-RPC
+
+XML-RPC is a protocol for remote procedure calls, which means that you can
+call functions on the server from every programming language which supports
+XML-RPC (Python, Perl, Ruby, Javascript, PHP, C, C++, Objective C, Java, Lisp,
+Haskell, .NET, ...).
+
+IMPORTANT: This interface is useless without the Cornetto database which is
+NOT included in this distribution. It is available from the TST Centrale (the
+Dutch HLT Agency) at the following website:
+http://www.inl.nl/index.php?option=com_content&task=view&id=448&Itemid=552
+
+Pycornetto offers a command line and client/server interface targeted at
+"power users" who intend to use Cornetto for natural language processing. If
+this profile does not suit you and you would prefer a graphical user interface,
+you can use DEBVisDic for Cornetto available from http://deb.fi.muni.cz/index.php
+
+
+--------------------------------------------------------------------------------
+	LICENSE & USAGE
+--------------------------------------------------------------------------------
+
+Pycornetto is licensed under the GNU Public License. For detailed
+license information see the file COPYING.
+
+
+--------------------------------------------------------------------------------
+	INSTALLATION
+--------------------------------------------------------------------------------
+
+For installation instruction see the file INSTALL.
+
+
+--------------------------------------------------------------------------------
+	USAGE
+--------------------------------------------------------------------------------
+
+For installation instruction see the file USAGE.
+
+
+--------------------------------------------------------------------------------
+    DOCUMENTATION
+--------------------------------------------------------------------------------
+
+All executable scripts are self-documenting: use the '-h' options. 
+
+The script cornetto-client.py also offers online help when running. 
+Just type "help()" 
+
+Other documentation, including API reference information, is available by
+running the script "pycornetto-help.py", which will open the main html page in
+a browser window. Alternatively, use the --l" option to find out where this
+documention is located on your system (this will only work after you have
+installed Pycornetto using the setup.py command).
+
+
+--------------------------------------------------------------------------------
+    KNOWN ISSUES
+--------------------------------------------------------------------------------
+
+Some open queries, e.g., 'inst.ask("slang +")', result in a search explosion,
+and may take practically forever. This is particularly problematic when
+running in server mode, because the client has no way to interrupt a query.
+There is currently no upper limit on the required time or the size of the
+result. However, the function set_max_depth can be used to set a limit on the
+maximal depth of searches for related lexical units where no relation name is
+specified. In the Pycornetto server, this limit can be enforced through the
+--max-depth command line option.
+
+
+--------------------------------------------------------------------------------
+	CONTACT
+--------------------------------------------------------------------------------
+
+For questions, bug reports or feature requests, please contact 
+Erwin Marsi at e.c.marsi@uvt.nl.
+
+
+--------------------------------------------------------------------------------
+	ACKNOWLEDGEMENTS
+--------------------------------------------------------------------------------
+
+This software was partly developed within the DAESO research project
+(http://daeso.uvt.nl) funded by the Stevin programme
+(http://taalunieversum.org/taal/technologie/stevin/)
+
+Thanks to the Cornetto team for delivering an excellent lexical resource for
+Dutch (http://www.let.vu.nl/onderzoek/projectsites/cornetto/)
+
+Pycornetto's existence would be much harder without:
+
+- the Python programming language (http://www.python.org/)
+- the NetworkX Python package for creating and manipulating graphs and networks 
+  (https://networkx.lanl.gov/)
+- Steven Bethard's argparse module (http://argparse.python-hosting.com/) 
+- Wingware's Python IDE (http://www.wingware.com/)
+
+Thanks for (help with) fixing bugs:
+- Frederik Vaassen
+- Maarten van Gompel
+- Lars Buitinck
+
+
+--------------------------------------------------------------------------------
+    PS
+--------------------------------------------------------------------------------
+
+If you found Pycornetto useful, or if you discover bugs or make improvements,
+please let me know.
+
+good luck!
+
+Erwin
+
+
+
+
+
+
+
+
+
+
+

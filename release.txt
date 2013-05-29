@@ -1,0 +1,12 @@
+Check list for new releases
+
+- bump version number
+- check years (2008,2009,...)
+- comment out debug code
+- update CHANGES
+- generate docs
+- push to repos
+- create packages using setup: ./setup.py sdist
+- upload packages
+
+

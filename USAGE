@@ -1,0 +1,211 @@
+================================================================================
+
+	PYCORNETTO USAGE
+
+================================================================================
+
+Pycornetto
+Version 0.6
+
+Copyright (C) 2008-2013 by Erwin Marsi and Tilburg University
+
+http://daeso.uvt.nl/pycornetto
+e.c.marsi@uvt.nl
+
+
+There are basically four ways to use Pycornetto, as described below.
+
+--------------------------------------------------------------------------------
+	USING PYCORNETTO FROM WITHIN THE PYTHON INTERPRETER
+--------------------------------------------------------------------------------
+
+Python is an interpreted and can be used interactively from the command line.
+This is a nice way to explore the Pycornetto package. Here is a samle session:
+
+1. Start Python
+
+2. Import the cornetto package
+
+   >>> from cornetto.cornet import Cornet
+
+3. Create a Cornet instance and parse the database files:
+
+   >>> c = Cornet()
+   
+   >>> c.Cornet("path/to/cdb_lu_stripped.xml", "path/to/cdb_syn_stripped.xml")
+   
+   Alternatively, you can use the file with word counts as the first argument
+   (e.g. "path/to/cdb_lu_xxx_subcounts.xml").
+
+
+4. Wait a long time...
+
+5. Try some queries:
+
+   >>> c.ask("taal")
+   ['taal:noun:3', 'taal:noun:1', 'taal:noun:2']
+
+   >>> c.ask("taal synonym")
+   {'SYNONYM': ['taaluiting:noun:1']}
+   
+   >>> c.ask("taal has_hyperonym")
+   {'HAS_HYPERONYM': ['medium:noun:1', 'communicatiemiddel:noun:1']}
+   
+   >>> c.ask("taal + spraak")
+   ['taal:noun:2', 'ROLE_INSTRUMENT', 'spraak:noun:3']
+   
+6. Read more on functions and arguments by typing:
+
+   >>> help(c)
+   
+   
+--------------------------------------------------------------------------------
+   CALLING PYCORNETTO FROM WITHIN YOUR PYTHON CODE
+--------------------------------------------------------------------------------
+
+Here is an example from a simple Python script to print all lexical units for
+the word form "taal":
+
+   #!/usr/bin/env python
+   
+   from cornetto.cornet import Cornet
+   
+   c = Cornet()
+   c.open("path/to/cdb_lu_stripped.xml", "path/to/cdb_syn_stripped.xml")
+   
+   for lu in c.ask("taal"):
+	  print lu
+	  
+	  
+--------------------------------------------------------------------------------
+   USING THE PYCORNETTO CLIENT
+--------------------------------------------------------------------------------
+
+********************************************************************************
+*  WARNING:                                                                    *
+*  The Pycornetto server is designed to run on a trusted intranet or LAN.      *
+*  It is not secure to be publicly exposed on the internet!                    *
+********************************************************************************
+
+You can run the Pycornetto server and connect to it using the Pycornetto
+client. The main advantages of this approach are that you have to read the
+database just once (which takes a long time) and that you can run it on
+another machine.
+
+To start the server, run the followin command:
+
+   cornetto-server.py path/to/cdb_lu_stripped.xml path/to/cdb_syn_stripped.xml &
+   
+This will start the server in the background listening on port 5204 on your
+machine (localhost). To change these defaults or other settings, have a look
+at the command line options by typing "cornetto-server.py -h".
+	  
+
+To start a client run:
+
+   cornetto-client.py
+   
+This is a simple client to connect to the Cornetto database server. It
+reads queries from standard input and writes results to standard output. 
+
+Here is a sample session of using the client interactively:
+
+$ cornetto-client.py 
+'import site' failed; use -v for traceback
+cornetto-client.py (version 0.4)
+Copyright (c) Erwin Marsi
+
+Type "?" to see his message.
+Type "help()" for help on available methods.
+Type "Ctrl-D" to exit.
+Restart with "cornetto-client.py -h" to see command line options.
+
+$ ask("taal")
+['taal:noun:3', 'taal:noun:1', 'taal:noun:2']
+$ ask("taal has_hyperonym")
+{'HAS_HYPERONYM': ['communicatiemiddel:noun:1', 'medium:noun:1']}
+$ ask("taal + spraak")
+['taal:noun:2', 'ROLE_INSTRUMENT', 'spraak:noun:3']
+$ ask("taal has_hyperonym3")
+{'HAS_HYPERONYM': [['communicatiemiddel:noun:1',
+                    {'HAS_HYPERONYM': [['medium:noun:3',
+                                        {'HAS_HYPERONYM': ['iets:noun:2']}],
+                                       ['hulpmiddel:noun:2',
+                                        {'HAS_HYPERONYM': ['iets:noun:2']}],
+                                       ['instrument:noun:4',
+                                        {'HAS_HYPERONYM': ['iets:noun:2']}],
+                                       ['middel:noun:3',
+                                        {'HAS_HYPERONYM': ['iets:noun:2']}]]}],
+                   ['medium:noun:1',
+                    {'HAS_HYPERONYM': [['hulpmiddel:noun:2',
+                                        {'HAS_HYPERONYM': ['iets:noun:2']}],
+                                       ['instrument:noun:4',
+                                        {'HAS_HYPERONYM': ['iets:noun:2']}],
+                                       ['medium:noun:3',
+                                        {'HAS_HYPERONYM': ['iets:noun:2']}],
+                                       ['middel:noun:3',
+                                        {'HAS_HYPERONYM': ['iets:noun:2']}]]}]]}
+$ ^D
+See you later alligator!
+
+The client has full online documentation. Just type "help()".
+
+
+--------------------------------------------------------------------------------
+   CALLING THE PYCORNETTO SERVER FROM YOUR OWN CODE
+--------------------------------------------------------------------------------
+
+The Pycornetto server support the XML-RPC protocol for remote procedure calls,
+which means that you can call functions on the server from every programming
+language which supports XML-RPC. This includes Python, Perl, Ruby, PHP,
+Javascript, C, C++, Objective C, Java, Lisp, Haskell, and .NET. To learn more
+about XMP-RPC read the excellent XML-RPC HOWTO by Eric Kidd at available from
+http://tldp.org/HOWTO/XML-RPC-HOWTO/ I can also recommend
+http://en.wikipedia.org/wiki/XML-RPC
+
+By way of example, here is a minimal Python code snippet to connect to a
+running server:
+
+   import xmlrpclib
+   
+   server = xmlrpclib.ServerProxy("http://localhost:5204")
+   query = "taal"
+   reply = server.ask(query)
+   print reply
+   
+   
+Below is more elaborate example which shows how to print all the canonical
+forms of the adjective "snel" in each of its three senses.
+   
+   import xmlrpclib
+   import xml.etree.cElementTree as et
+   
+   server = xmlrpclib.ServerProxy("http://localhost:5204")
+   
+   # get all lexical units with the spelling form "snel"
+   # as a list of xml strings
+   lexical_units_xml = server.ask("snel", "xml")
+   
+   for lu_xml in lexical_units_xml:
+	  # parse xml into an ElementTree object 
+	   lu_elem_tree = et.fromstring(lu_xml)
+	   
+	   # get the spelling form from the "form-spelling" attribute
+	   # on the <form< subelement (which is,of course, "snel")
+	   form_el = lu_elem_tree.find("form")
+	   form = form_el.get("form-spelling")
+	   # this may be a unicode string, so don't forget to encode
+	   form = form.encode("utf-8")
+	   
+	   # in the same way, get the sense from the "c_seq_nr" atribute
+	   # on the <cdb_lu> element
+	   sense = lu_elem_tree.get("c_seq_nr")
+	   
+	   print "%s:%s" % (form, sense)
+	   
+	   # find all <canonicalform> elements embedded in this tree
+	   # and print the text they contain
+	   for cf_el in lu_elem_tree.findall(".//canonicalform"):
+		   print "*", cf_el.text.encode("utf-8")
+
+

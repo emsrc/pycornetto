@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cornetto.cornet.Cornet</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="cornetto-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Pycorneto</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="cornetto-module.html">Package&nbsp;cornetto</a> ::
+        <a href="cornetto.cornet-module.html">Module&nbsp;cornet</a> ::
+        Class&nbsp;Cornet
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="cornetto.cornet.Cornet-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Cornet</h1><p class="nomargin-top"><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">Cornet</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="cornetto.simcornet.SimCornet-class.html">simcornet.SimCornet</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>The Cornet class exposes the Cornetto xml database</p>
+  <p>Most public methods require input in the form of a shorthand for 
+  specifying lexical units and relations, as described below.</p>
+  <p><b>Lexical units specifications</b></p>
+  <p>A specification of lexical units consists of three parts, separated by
+  a single colon (':') character:</p>
+  <ol start="1">
+    <li>
+      Spelling form (i.e. a word)
+      <p>This can be any string without white space</p>
+    </li>
+    <li>
+      Syntactic category (optional)
+      <p>This can be any of 'noun', 'verb' or 'adj'.</p>
+    </li>
+    <li>
+      A sense (optional)
+      <p>This is number which distinguishes the particular word sense</p>
+    </li>
+  </ol>
+  <p>Examples of valid lexical unit specifications are:</p>
+  <ul>
+    <li>
+      slang:noun:1
+    </li>
+    <li>
+      slang:noun
+    </li>
+    <li>
+      slang::1
+    </li>
+    <li>
+      slang
+    </li>
+  </ul>
+  <p><b>Relation specifications</b></p>
+  <p>A specification of a relation consists of two parts:</p>
+  <ol start="1">
+    <li>
+      Relation name (optional)
+      <p>The name of a Wordnet relation between two synsets. See the 
+      Cornetto documentation for the available relations. If not given, all
+      relations are tried. The special relation &quot;SYNONYM&quot; holds 
+      between all members of the same synset. The relation name is not 
+      case-sensitive; you can use lower case.</p>
+    </li>
+    <li>
+      Depth (optional)
+      <p>A digit ('0' to '9') or the plus sign ('+'). This represents the 
+      depth of the relations that are considered during search. In other 
+      words, the maximal number of links allowed. If not given a default 
+      value of 1 is used. The plus represents the system maximum (currently
+      9).</p>
+    </li>
+  </ol>
+  <p>A relation specification must have a name, a depth or both. Valid 
+  relation specification include:</p>
+  <ul>
+    <li>
+      HAS_HYPERONYM
+    </li>
+    <li>
+      HAS_HYPERONYM1
+    </li>
+    <li>
+      HAS_HYPERONYM+
+    </li>
+    <li>
+      3
+    </li>
+    <li>
+      +
+    </li>
+  </ul>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cdb_lu</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">cdb_syn</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">output_format</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">spec</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">max_depth</span>=<span class="summary-sig-default">9</span>)</span><br />
+      Create a new Cornet instance</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#open" class="summary-sig-name">open</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cdb_lu</span>,
+        <span class="summary-sig-arg">cdb_syn</span>,
+        <span class="summary-sig-arg">verbose</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Open and parse Cornetto database files</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.open">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#ask" class="summary-sig-name">ask</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">query</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Pose a query about lexical units to the Cornetto database</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.ask">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#get_lex_units" class="summary-sig-name">get_lex_units</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">spec</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Get all lexical units which satisfy this specification</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_lex_units">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">dict</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#get_related_lex_units" class="summary-sig-name">get_related_lex_units</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec</span>,
+        <span class="summary-sig-arg">rel_spec</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      For all specified lexical units, find all lexical units related by 
+      the specified relation.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_related_lex_units">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#test_lex_units_relation" class="summary-sig-name">test_lex_units_relation</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">from_lu_spec</span>,
+        <span class="summary-sig-arg">rel_spec</span>,
+        <span class="summary-sig-arg">to_lu_spec</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Test if certain relation(s) hold between certain lexical units by 
+      searching for a a path from any of the source lexical units to any of
+      target lexical unit(s) along one or more of the specified relation(s)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.test_lex_units_relation">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#get_synsets" class="summary-sig-name">get_synsets</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">spec</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Get all synsets containing lexical units which satisfy a certain 
+      specification.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_synsets">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">dict</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#get_related_synsets" class="summary-sig-name">get_related_synsets</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec</span>,
+        <span class="summary-sig-arg">rel_name</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      For all synsets containing lexical units satisfying this 
+      specification find the related synsets along this relation.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_related_synsets">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#get_lex_unit_by_id" class="summary-sig-name">get_lex_unit_by_id</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">c_lu_id</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Get lexical unit by id</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_lex_unit_by_id">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#get_synset_by_id" class="summary-sig-name">get_synset_by_id</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">c_sy_id</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Get synset by id</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_synset_by_id">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_lex_unit_from_synset"></a><span class="summary-sig-name">get_lex_unit_from_synset</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">c_sy_id</span>,
+        <span class="summary-sig-arg">lemma</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Get a lexical unit based on a synset ID and a lemma</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_lex_unit_from_synset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">dict</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#all_common_subsumers" class="summary-sig-name">all_common_subsumers</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec1</span>,
+        <span class="summary-sig-arg">lu_spec2</span>,
+        <span class="summary-sig-arg">rel_name</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">HAS_HYPERONYM</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Finds all common subsumers of two lexical units over the given 
+      relation.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.all_common_subsumers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#least_common_subsumers" class="summary-sig-name">least_common_subsumers</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu_spec1</span>,
+        <span class="summary-sig-arg">lu_spec2</span>,
+        <span class="summary-sig-arg">rel_name</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">HAS_HYPERONYM</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Finds the least common subsumers of two lexical units over the given 
+      relation, that is, those common subsumers of which the lenght of the 
+      path (in edges) from the first lexical unit to the subsumer to the 
+      second lexical unit is minimal.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.least_common_subsumers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#set_output_format" class="summary-sig-name">set_output_format</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">spec</code><code class="variable-quote">'</code></span>)</span><br />
+      Change the default output format</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.set_output_format">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#set_max_depth" class="summary-sig-name">set_max_depth</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">max_depth</span>=<span class="summary-sig-default">9</span>)</span><br />
+      Sets a limit on the maximal depth of searches for related lexical 
+      units where no relation name is specified.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.set_max_depth">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_split_query"></a><span class="summary-sig-name">_split_query</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">query</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._split_query">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_split_unit_spec"></a><span class="summary-sig-name">_split_unit_spec</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">spec</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._split_unit_spec">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_split_rel_spec"></a><span class="summary-sig-name">_split_rel_spec</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">spec</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._split_rel_spec">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="cornetto.cornet.Cornet-class.html#_transitive_closure" class="summary-sig-name" onclick="show_private();">_transitive_closure</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lus</span>,
+        <span class="summary-sig-arg">rel_name</span>)</span><br />
+      Computes the transitive closure of a set of lexical units over a 
+      certain relation.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._transitive_closure">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_bidirectional_shortest_path"></a><span class="summary-sig-name">_bidirectional_shortest_path</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">from_lus</span>,
+        <span class="summary-sig-arg">to_lus</span>,
+        <span class="summary-sig-arg">rel_name</span>,
+        <span class="summary-sig-arg">depth</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._bidirectional_shortest_path">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_reconstruct_path"></a><span class="summary-sig-name">_reconstruct_path</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">pred</span>,
+        <span class="summary-sig-arg">common_lu</span>,
+        <span class="summary-sig-arg">succ</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._reconstruct_path">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_search_related_lex_units"></a><span class="summary-sig-name">_search_related_lex_units</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">from_lu</span>,
+        <span class="summary-sig-arg">rel_name</span>,
+        <span class="summary-sig-arg">depth</span>,
+        <span class="summary-sig-arg">lu_formatter</span>,
+        <span class="summary-sig-arg">rel_formatter</span>,
+        <span class="summary-sig-arg">path</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._search_related_lex_units">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_lex_unit_formatter"></a><span class="summary-sig-name">_get_lex_unit_formatter</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._get_lex_unit_formatter">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_lu_to_spec"></a><span class="summary-sig-name">_lu_to_spec</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._lu_to_spec">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_relation_formatter"></a><span class="summary-sig-name">_get_relation_formatter</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._get_relation_formatter">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_rel_to_spec"></a><span class="summary-sig-name">_rel_to_spec</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">edge</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._rel_to_spec">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_rel_to_xml"></a><span class="summary-sig-name">_rel_to_xml</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">edge</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._rel_to_xml">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_synset_formatter"></a><span class="summary-sig-name">_get_synset_formatter</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._get_synset_formatter">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_synset_to_specs"></a><span class="summary-sig-name">_synset_to_specs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">synset</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._synset_to_specs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_lu_form"></a><span class="summary-sig-name">_get_lu_form</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._get_lu_form">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_lu_cat"></a><span class="summary-sig-name">_get_lu_cat</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._get_lu_cat">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_lu_sense"></a><span class="summary-sig-name">_get_lu_sense</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._get_lu_sense">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_lu_has_cat"></a><span class="summary-sig-name">_lu_has_cat</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu</span>,
+        <span class="summary-sig-arg">cat</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._lu_has_cat">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_lu_has_sense"></a><span class="summary-sig-name">_lu_has_sense</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lu</span>,
+        <span class="summary-sig-arg">sense</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._lu_has_sense">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_rel_name"></a><span class="summary-sig-name">_get_rel_name</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">edge</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._get_rel_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_rel_has_name"></a><span class="summary-sig-name">_rel_has_name</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">edge</span>,
+        <span class="summary-sig-arg">name</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._rel_has_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_unit_separator"></a><span class="summary-name">_unit_separator</span> = <code title="':'"><code class="variable-quote">'</code><code class="variable-string">:</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_handled_output_formats"></a><span class="summary-name">_handled_output_formats</span> = <code title="('spec', 'xml', 'raw')"><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">spec</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">xml</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">raw</code><code class="variable-quote">'</code><code class="variable-group">)</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_default_output_format"></a><span class="summary-name">_default_output_format</span> = <code title="'spec'"><code class="variable-quote">'</code><code class="variable-string">spec</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_default_max_depth"></a><span class="summary-name">_default_max_depth</span> = <code title="9">9</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cdb_lu</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">cdb_syn</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">output_format</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">spec</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">max_depth</span>=<span class="sig-default">9</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create a new Cornet instance</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>cdb_lu</code></strong> - an xml file(name) to read the lexical units from</li>
+        <li><strong class="pname"><code>cdb_syn</code></strong> - an xml file(name) to read the synsets from</li>
+        <li><strong class="pname"><code>default_format</code></strong> (string ('spec', 'xml', 'raw')) - default output format</li>
+        <li><strong class="pname"><code>max_depth</code></strong> (int) - a maximal depth between 1 and 9</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="open"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">open</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cdb_lu</span>,
+        <span class="sig-arg">cdb_syn</span>,
+        <span class="sig-arg">verbose</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.open">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Open and parse Cornetto database files</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>cdb_lu</code></strong> (file or filename) - xml definition of the lexical units</li>
+        <li><strong class="pname"><code>cdb_syn</code></strong> (file or filename) - xml definition of the synsets</li>
+        <li><strong class="pname"><code>verbose</code></strong> - verbose output during parsing</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ask"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ask</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">query</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.ask">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Pose a query about lexical units to the Cornetto database</p>
+  <p>This supports three different types of queries:</p>
+  <ol start="1">
+    <li>
+      Getting lexical units
+      <p>If the query consists of only a lexical unit specification the 
+      answer lists all lexical units which satisfy this specification. See 
+      also <a href="cornetto.cornet.Cornet-class.html#get_lex_units" 
+      class="link">get_lex_units</a></p>
+    </li>
+    <li>
+      Getting related lexical units
+      <p>If the query consists of a lexical unit specification plus a 
+      relation specification, the answer consists of all lexical units 
+      related by the specified relation(s). See also <a 
+      href="cornetto.cornet.Cornet-class.html#get_related_lex_units" 
+      class="link">get_related_lex_units</a></p>
+    </li>
+    <li>
+      Testing relations between lexical units
+      <p>If the query consists of a lexical unit specification, plus a 
+      relation specification plus another lexical specification, the answer
+      is a path from the first to the second lexical unit(s) along the 
+      specified relation(s). See also <a 
+      href="cornetto.cornet.Cornet-class.html#test_lex_units_relation" 
+      class="link">test_lex_units_relation</a></p>
+    </li>
+  </ol>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>query</code></strong> (string) - a specification</li>
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>depends on type of query an output format</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_lex_units"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_lex_units</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">spec</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_lex_units">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get all lexical units which satisfy this specification</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>inst.get_lex_units(<span class="py-string">&quot;lamp&quot;</span>)
+<span class="py-output">['lamp:noun:3', 'lamp:noun:4', 'lamp:noun:1', 'lamp:noun:2']</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>inst.get_lex_units(<span class="py-string">&quot;varen&quot;</span>)
+<span class="py-output">['varen:verb:3', 'varen:noun:1', 'varen:verb:1', 'varen:verb:2']</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>inst.get_lex_units(<span class="py-string">&quot;varen:noun&quot;</span>)
+<span class="py-output">['varen:noun:1']</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>inst.get_lex_units(<span class="py-string">&quot;varen:verb:3&quot;</span>)
+<span class="py-output">['varen:verb:3']</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>inst.get_lex_units(<span class="py-string">&quot;varen:noun:3&quot;</span>)
+<span class="py-output">[]</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>spec</code></strong> - lexical unit specification</li>
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+    <dt>Returns: list</dt>
+        <dd>list of lexical units in requested output format</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_related_lex_units"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_related_lex_units</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec</span>,
+        <span class="sig-arg">rel_spec</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_related_lex_units">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>For all specified lexical units, find all lexical units related by the
+  specified relation.</p>
+  <p>The search may be constrained by the setting of the maximum search 
+  depth; see set_max_depth.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(inst.get_related_lex_units(<span class="py-string">&quot;slang&quot;</span>, <span class="py-string">&quot;SYNONYM&quot;</span>))
+<span class="py-output">{'slang:noun:1': {'SYNONYM': {'serpent:noun:2': {}}},</span>
+<span class="py-output"> 'slang:noun:2': {},</span>
+<span class="py-output"> 'slang:noun:3': {'SYNONYM': {'pin:noun:2': {}, 'tang:noun:2': {}}},</span>
+<span class="py-output"> 'slang:noun:4': {'SYNONYM': {'groepstaal:noun:1': {},</span>
+<span class="py-output">                              'jargon:noun:1': {},</span>
+<span class="py-output">                              'kringtaal:noun:1': {}}},</span>
+<span class="py-output"> 'slang:noun:5': {'SYNONYM': {'muntslang:noun:1': {}}},</span>
+<span class="py-output"> 'slang:noun:6': {'SYNONYM': {'Slang:noun:1': {}}}}</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(inst.get_related_lex_units(<span class="py-string">&quot;slang::1&quot;</span>, <span class="py-string">&quot;1&quot;</span>))
+<span class="py-output">{'slang:noun:1': {'HAS_HOLO_MEMBER': {'slangegebroed:noun:1': {},</span>
+<span class="py-output">                                      'slangengebroed:noun:2': {}},</span>
+<span class="py-output">                  'HAS_HYPERONYM': {'reptiel:noun:1': {}},</span>
+<span class="py-output">                  'HAS_HYPONYM': {'cobra:noun:1': {},</span>
+<span class="py-output">                                  'gifslang:noun:1': {},</span>
+<span class="py-output">                                  'hoedslang:noun:1': {},</span>
+<span class="py-output">                                  'hydra:noun:2': {},</span>
+<span class="py-output">                                  'lansslang:noun:1': {},</span>
+<span class="py-output">                                  'lepelslang:noun:1': {},</span>
+<span class="py-output">                                  'python:noun:2': {},</span>
+<span class="py-output">                                  'ratelslang:noun:1': {},</span>
+<span class="py-output">                                  'ringslang:noun:1': {},</span>
+<span class="py-output">                                  'rolslang:noun:1': {},</span>
+<span class="py-output">                                  'waterslang:noun:3': {},</span>
+<span class="py-output">                                  'wurgslang:noun:1': {},</span>
+<span class="py-output">                                  'zeeslang:noun:1': {}},</span>
+<span class="py-output">                  'HAS_MERO_PART': {'slangekop:noun:1': {},</span>
+<span class="py-output">                                    'slangenkop:noun:1': {}},</span>
+<span class="py-output">                  'SYNONYM': {'serpent:noun:2': {}}}}</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lu_spec</code></strong> - lexical unit(s) specification of source</li>
+        <li><strong class="pname"><code>rel_spec</code></strong> - relation(s) specification</li>
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+    <dt>Returns: dict</dt>
+        <dd>an hierachical dict structure with lexical units and relations as
+          keys</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="test_lex_units_relation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">test_lex_units_relation</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">from_lu_spec</span>,
+        <span class="sig-arg">rel_spec</span>,
+        <span class="sig-arg">to_lu_spec</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.test_lex_units_relation">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Test if certain relation(s) hold between certain lexical units by 
+  searching for a a path from any of the source lexical units to any of 
+  target lexical unit(s) along one or more of the specified relation(s)</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>inst.test_lex_units_relation(<span class="py-string">&quot;lamp&quot;</span>, <span class="py-string">&quot;HAS_HYPONYM&quot;</span>, <span class="py-string">&quot;gloeilamp&quot;</span>)
+<span class="py-output">['lamp:noun:2', 'HAS_HYPONYM', 'gloeilamp:noun:1']</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>inst.test_lex_units_relation(<span class="py-string">&quot;lamp&quot;</span>, <span class="py-string">&quot;HAS_HYPONYM2&quot;</span>, <span class="py-string">&quot;fotolamp&quot;</span>)
+<span class="py-output">['lamp:noun:2', 'HAS_HYPONYM', 'gloeilamp:noun:1', 'HAS_HYPONYM', 'fotolamp:noun:1']</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>inst.test_lex_units_relation(<span class="py-string">&quot;lamp&quot;</span>, <span class="py-string">&quot;HAS_HYPONYM&quot;</span>, <span class="py-string">&quot;fotolamp&quot;</span>)
+<span class="py-output">[]</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>from_lu_spec</code></strong> - lexical unit specification of the source(s)</li>
+        <li><strong class="pname"><code>rel_spec</code></strong> - relation(s) specification</li>
+        <li><strong class="pname"><code>to_lu_spec</code></strong> - lexical unit specification of the target(s)</li>
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+    <dt>Returns: list</dt>
+        <dd>list of lexical units and relations in requested output format, 
+          possibly empty</dd>
+  </dl>
+<div class="fields">      <p><strong>Warning:</strong>
+        The result may not be the only shortest path.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="get_synsets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_synsets</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">spec</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_synsets">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get all synsets containing lexical units which satisfy a certain 
+  specification.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(inst.get_synsets(<span class="py-string">&quot;slang&quot;</span>))
+<span class="py-output">[['Slang:noun:1', 'slang:noun:6'],</span>
+<span class="py-output"> ['slang:noun:5', 'muntslang:noun:1'],</span>
+<span class="py-output"> ['slang:noun:1', 'serpent:noun:2'],</span>
+<span class="py-output"> ['slang:noun:2'],</span>
+<span class="py-output"> ['tang:noun:2', 'pin:noun:2', 'slang:noun:3'],</span>
+<span class="py-output"> ['jargon:noun:1', 'groepstaal:noun:1', 'kringtaal:noun:1', 'slang:noun:4']]</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(inst.get_synsets(<span class="py-string">&quot;slang:noun:5&quot;</span>))
+<span class="py-output">[['slang:noun:5', 'muntslang:noun:1']]</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(inst.get_synsets(<span class="py-string">&quot;slang:noun:7&quot;</span>))
+<span class="py-output">[]</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>spec</code></strong> - lexical unit specification</li>
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+    <dt>Returns: list</dt>
+        <dd>list of synsets (lists) with lexical units in requested output 
+          format</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_related_synsets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_related_synsets</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec</span>,
+        <span class="sig-arg">rel_name</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_related_synsets">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>For all synsets containing lexical units satisfying this specification
+  find the related synsets along this relation. If no relation is given, 
+  all relations are considered.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(inst.get_related_synsets(<span class="py-string">&quot;lamp&quot;</span>, <span class="py-string">&quot;HAS_HYPERONYM&quot;</span>))
+<span class="py-output">{'HAS_HYPERONYM': [['armatuur:noun:1', 'verlichtingsarmatuur:noun:1'],</span>
+<span class="py-output">                   ['lamp:noun:2', 'licht:noun:13', 'lichtje:noun:1'],</span>
+<span class="py-output">                   ['lichtbron:noun:1'],</span>
+<span class="py-output">                   ['voorwerp:noun:1', 'ding:noun:1']]}</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(inst.get_related_synsets(<span class="py-string">&quot;slang::1&quot;</span>))
+<span class="py-output">{'HAS_HOLO_MEMBER': [['slangegebroed:noun:1', 'slangengebroed:noun:2']],</span>
+<span class="py-output"> 'HAS_HYPERONYM': [['reptiel:noun:1']],</span>
+<span class="py-output"> 'HAS_MERO_PART': [['slangekop:noun:1', 'slangenkop:noun:1']]}</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lu_spec</code></strong> - lexical unit(s) specification of source</li>
+        <li><strong class="pname"><code>rel_name</code></strong> - relation name</li>
+    </ul></dd>
+    <dt>Returns: dict</dt>
+        <dd>a dict with relations as keys and lists of synsets as values</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Parameter rel_name is a relation name, not a relation 
+        specification. Search is thus not transitive.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="get_lex_unit_by_id"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_lex_unit_by_id</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">c_lu_id</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_lex_unit_by_id">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get lexical unit by id</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>c_lu_id</code></strong> - Tvalue of the <code>c_lu_id</code> attribute at 
+          <code>&lt;cdb_lu&gt;</code> element</li>
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+    <dt>Returns: string or None</dt>
+        <dd>lexical unit in the requested output format or None</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_synset_by_id"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_synset_by_id</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">c_sy_id</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.get_synset_by_id">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get synset by id</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>c_sy_id</code></strong> - value of the <code>c_sy_id</code> attribute at 
+          <code>&lt;cdb_synset&gt;</code> element</li>
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+    <dt>Returns: list or None</dt>
+        <dd>set (list) of lexical units in the requested output format</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="all_common_subsumers"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">all_common_subsumers</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec1</span>,
+        <span class="sig-arg">lu_spec2</span>,
+        <span class="sig-arg">rel_name</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">HAS_HYPERONYM</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.all_common_subsumers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds all common subsumers of two lexical units over the given 
+  relation. The common subsumers are grouped according to the lenght of the
+  path (in edges) from the first lexical unit to the subsumer to the second
+  lexical unit.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(c.all_common_subsumers(<span class="py-string">&quot;kat&quot;</span>, <span class="py-string">&quot;hond&quot;</span>))
+<span class="py-output">{2: ['huisdier:noun:1', 'zoogdier:noun:1'],</span>
+<span class="py-output"> 4: ['beest:noun:2', 'gedierte:noun:2', 'dier:noun:1'],</span>
+<span class="py-output"> 5: ['ziel:noun:3',</span>
+<span class="py-output">     'homo sapiens:noun:1',</span>
+<span class="py-output">     'sterveling:noun:1',</span>
+<span class="py-output">     'mens:noun:1',</span>
+<span class="py-output">     'mensenkind:noun:1'],</span>
+<span class="py-output"> 6: ['organisme:noun:2'],</span>
+<span class="py-output"> 8: ['wezen:noun:1', 'schepsel:noun:1', 'creatuur:noun:2'],</span>
+<span class="py-output"> 9: ['iets:noun:2'],</span>
+<span class="py-output"> 10: ['object:noun:3']}</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lu_spec1</code></strong> - first lexical unit(s) specification</li>
+        <li><strong class="pname"><code>rel_name</code></strong> - relation name (not a specification)</li>
+        <li><strong class="pname"><code>lu_spec2</code></strong> - second lexical unit(s) specification</li>
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+    <dt>Returns: dict</dt>
+        <dd>a dict with path lenghts as key and lists of common subsumers as 
+          values, possibly empty</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        this method will only make sense for some relations (typically 
+        HAS_HYPERONYM) but not for others (e.g. SYNONYM)
+      </p>
+</div></td></tr></table>
+</div>
+<a name="least_common_subsumers"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">least_common_subsumers</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lu_spec1</span>,
+        <span class="sig-arg">lu_spec2</span>,
+        <span class="sig-arg">rel_name</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">HAS_HYPERONYM</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.least_common_subsumers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds the least common subsumers of two lexical units over the given 
+  relation, that is, those common subsumers of which the lenght of the path
+  (in edges) from the first lexical unit to the subsumer to the second 
+  lexical unit is minimal.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>c.least_common_subsumers(<span class="py-string">&quot;kat&quot;</span>, <span class="py-string">&quot;hond&quot;</span>)
+<span class="py-output">['huisdier:noun:1', 'zoogdier:noun:1']</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lu_spec1</code></strong> - first lexical unit(s) specification</li>
+        <li><strong class="pname"><code>rel_name</code></strong> - relation name (not a specification)</li>
+        <li><strong class="pname"><code>lu_spec2</code></strong> - second lexical unit(s) specification</li>
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+    <dt>Returns: list</dt>
+        <dd>a lists of the least common subsumers, possibly empty</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        this method will only make sense for some relations (typically 
+        HAS_HYPERONYM) but not for others (e.g. SYNONYM)
+      </p>
+</div></td></tr></table>
+</div>
+<a name="set_output_format"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_output_format</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">spec</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.set_output_format">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Change the default output format</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>format</code></strong> ('spec', 'xml', 'raw') - output format</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_max_depth"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_max_depth</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">max_depth</span>=<span class="sig-default">9</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet.set_max_depth">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets a limit on the maximal depth of searches for related lexical 
+  units where no relation name is specified.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>max_depth</code></strong> (int) - a maximal depth between 1 and 9</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The limit is only enforced on the public method, i.e. ask, 
+        get_related_lex_units, and not on the private methods. Also note 
+        that this not affect test_lex_units_relation.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="_transitive_closure"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_transitive_closure</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lus</span>,
+        <span class="sig-arg">rel_name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="cornetto.cornet-pysrc.html#Cornet._transitive_closure">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Computes the transitive closure of a set of lexical units over a 
+  certain relation. Returns a dict with successors as keys and their 
+  distance (in edges) to the orginal lexical units.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="cornetto-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Pycorneto</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed May 29 10:20:12 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

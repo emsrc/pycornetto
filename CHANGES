@@ -1,0 +1,132 @@
+================================================================================
+
+  PYCORNETTO CHANGES
+
+================================================================================
+
+
+--------------------------------------------------------------------------------
+Version 0.6.1
+--------------------------------------------------------------------------------
+
+New features:
+
+- Added get_lex_unit_from_synset() method to Cornet, returns a lexical unit given
+  a synset and a lemma (or None); by Maarten van Gompel.
+  
+Other changes:
+
+- Minor changes in documentation
+- Moved repos from Google Code (hg) to Github (git)
+
+
+--------------------------------------------------------------------------------
+Version 0.6
+--------------------------------------------------------------------------------
+
+Bugs solved:
+
+- networkx version check now accepts version 1.0.1 and higher; 
+  thanks to Lars Buitinck
+
+
+--------------------------------------------------------------------------------
+Version 0.5
+--------------------------------------------------------------------------------
+
+New features:
+
+- latest networkx version ("1.0rc1" or later) is now required; 
+  older versions are no longer supported; thanks to Maarten van Gompel 
+  and Frederik Vaassen for several fixes
+- automatic filtering of buggy relations (self-referring relations between a
+  lexical unit and itself, and multiple identical relations between lexical
+  units)
+- automatic correction of lexical unit category flaws (ADJECTIVE->adj,
+  ADVERB->adv, NOUN->noun, VERB->verb)
+- check that counts are indeed present when word similarity measures are used  
+  
+
+Bugs solved:
+
+- unintended duplicate "SYNONYM" relations
+- removed hack which created a "HAS_HYPONYM" relation for each "HAS_HYPERONYM"
+  relation
+
+
+--------------------------------------------------------------------------------
+Version 0.4.3
+--------------------------------------------------------------------------------
+
+Bugs solved:
+
+- the _bidirectional_shortest_path method on the Cornet class methods raised
+  an AttributeError when used with Networkx version 0.99, which no longer
+  supports the in_edges_iter method
+  
+  
+--------------------------------------------------------------------------------
+Version 0.4.2
+--------------------------------------------------------------------------------
+
+Bugs solved:
+
+- the lin_sim word similarity method, and probably some other methods, raised 
+  an AttributeError when used with Networkx version >= 0.99
+
+
+--------------------------------------------------------------------------------
+Version 0.4.1
+--------------------------------------------------------------------------------
+
+- minor revision to ensure compatibility with the latest 0.99 release of
+  NetworkX
+  
+
+--------------------------------------------------------------------------------
+Version 0.4
+--------------------------------------------------------------------------------
+
+New features:
+
+- cornetto-add-counts.py and cornetto-add-sub-counts.py for adding word 
+  counts to the Cornetto database
+- new functions to get word counts, subcounts (i.e. total of counts over all 
+  subsumed words), probability, and information content
+- three corpus-based word similarity metrics as proposed by Resnik, 
+  Jiang & Conrath and Lin.
+  
+Bugs solved:
+
+- fixed a major bug in get_related_lex_units which truncated its output;
+  changed output structure to hierarchical dict
+- a number of minor bugs and typos fixed
+
+
+--------------------------------------------------------------------------------
+Version 0.3
+--------------------------------------------------------------------------------
+
+New features:
+
+- compatible with final release of Cornetto database version 1.0
+- conrnetto-strip.py script now allows reducing the database to a minimum,
+  which greatly reduces the memory footprint of pycornetto
+- functions least_common_subsumers and all_common_subsumers
+- command line option for port number (--port) removed in both cornetto 
+  server and client scripts; port can now be specified together with the 
+  hostname using --host option (e.g "localhost:5000") 
+
+Bugs solved:
+
+- command line arguments to cornetto-server.py specifying the database files 
+  are now correctly handled
+- NameError is now caught in cornetto-client, preventing the client from 
+  crashing
+
+
+--------------------------------------------------------------------------------
+Version 0.2
+--------------------------------------------------------------------------------
+
+- first public release of Pycornetto
