@@ -61,6 +61,8 @@ license information see the file COPYING.
 	INSTALLATION
 --------------------------------------------------------------------------------
 
+Python packages are available from
+https://github.com/emsrc/pycornetto/wiki/Python-Packages
 For installation instruction see the file INSTALL.
 
 
@@ -68,7 +70,7 @@ For installation instruction see the file INSTALL.
 	USAGE
 --------------------------------------------------------------------------------
 
-For installation instruction see the file USAGE.
+For usage instruction see the file USAGE.
 
 
 --------------------------------------------------------------------------------
